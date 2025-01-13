@@ -114,3 +114,144 @@ As a result, the extension files will be generated in the `output` folder. It wi
 Simply copy this folder to the `extensions` folder of the game and enable it in the game settings.
 
 ### GUI version
+
+GUI version is more user-friendly and has more features.
+
+### First start
+On first start, the tool will ask you to select the extracted game files folder.
+
+![Select extracted folder](docs/images/gui_select_extracted_folder.png)
+
+### Main window
+
+After you start the GUI version, you will see the main window with the list of the connections and empty sectors selection
+and gate data fields.
+
+![Main window](docs/images/gui_main_window.png)
+
+### First sector selection and map
+
+To start, simple select any sector from the list in the `Direct Sector` group.
+Then the current gate location will be displayed on the raw and simple sector map and as a list on the right side.
+
+![Select sector](docs/images/gui_first_sector_selected.png)
+
+Existing gates displayed as a blue dots with appropriate border color. Red one - are non-active ones, i.e. not connected to any other gate. Green one - are active, i.e. connected to another gate.
+
+### Define gate location
+
+Then you can define the gate location by entering the coordinates and rotation angles.
+Please take in account that the coordinates are split into two parts:
+[list]
+ - coordinates itself, in km.
+ - position - the position of from the coordinates point in meters.
+[/list]
+
+Position is used to define the exact location of the gate in the sector. and it's randomly prefilled on the gate selection.
+
+### New gate on map
+
+After you will define coordinates, the new gate will be displayed on the map as a light yellow dot.
+
+![Define gate](docs/images/gui_define_gate.png)
+
+### Move gate
+
+Now you can select by mouse the move across sector map. Coordinates will be updated in the gate data fields.
+
+How it looks you can see on appropriate animated gif.
+![Move gate](docs/images/gui_move_gate.gif)
+
+### Other gate data
+
+Then you can define a rotation angles for the gate.
+
+And set the status of the gate - for some reason you can deactivate it (if you plan to use it in your own scenarios).
+
+
+### Second sector selection
+
+Now you can select the second sector and define the gate location in it.
+
+Please take in account that the in selection list for the second (`Opposite Sector`) some sectors will be grayed out and not available for the selection. It's because the sector is already selected as a first sector or they already have a connection with the `Direct Sector`.
+
+![Select opposite sector](docs/images/gui_select_opposite_sector.gif)
+
+After you will define the gate in the second sector, you can add the connection to the list.
+
+### Add connection
+
+Simple press the `Add Gate` button.
+
+![Add gate](docs/images/gui_add_gate.png)
+
+The connection will be added to the list. You can see the connection in the list and still can edit it.
+
+![Connection added](docs/images/gui_connection_added.png)
+
+### Modify existing connection
+
+If you will move the gate in the sector for the existing connection - you will see two "identical" gates on the map.
+One (`green`) - is the gate from the connection, another (`light yellow`) - is the gate in the new location.
+
+![Gate from connection moved on the new position](docs/images/gui_gate_from_connection_moved.png)
+
+Additionally, as you can see, each gate have a tooltip on the map with the sector name, to which it connects current sector, source (from `map` or from `mod`) and the X,Z coordinates.
+
+### Main window buttons
+
+As you can see, there are two buttons on the bottom of the window:
+[list]
+- `Add/Update Gate` - to add the gate connection to the list. We already discussed it.
+- `Reset` - to reset the gate data fields to the default values. See below for more information.
+[/list]
+
+### Reset button
+
+If you have no selected gate connection in the list - reset button will reset all gate connection related information to the defaults, mostly empty values.
+
+Otherwise, it will reset the gate data fields to the values of the selected connection.
+
+So, now you can add more connections to the list.
+
+### Save the mod
+
+When you will finish with the connections, you can save te mod via `File` -> `Save Mod` menu item.
+
+Please take in account - you you not finished yet editing the connections, this menu item will be disabled.
+
+![Save mod](docs/images/gui_save_mod_disabled.png)
+
+Save current connection or reset it to have the ability to save the mod.
+
+After you will go to the `Save Mod` menu item, the tool will ask you to select the output folder for the mod.
+
+![Select output folder](docs/images/gui_select_output_folder.png)
+
+After that the mod is ready to be installed in the game.
+
+### Load the mod
+
+If you have a previously saved mod, you can load it via `File` -> `Load Mod` menu item.
+Difference from the saving mod - you hve to select not a mod folder, but the `content.xml` file in the mod root folder.
+It was made to avoid missing the right folder.
+
+![Load mod](docs/images/gui_load_mod.png)
+
+After loading the mod, you will see the connections in the list and the gates on the map. But no current connection will be selected.
+
+### Overview mod in a tool and in the game
+
+There a gif to display the mod gates ti compare it with a screenshots from the game.
+
+![Mod overview](docs/images/gui_mod_gates_overview.gif)
+
+And there a several screenshots from the game with the mod gates in the `Asteroid Belt` sector.
+
+![Three new gates with connections](docs/images/X4-AsteroidBelt-new-thee-gates.png)
+
+![Gate to Argon Prime](docs/images/X4-AsteroidBelt-to-ArgonPrime.png)
+
+![Gate to Barren Shores](docs/images/X4-AsteroidBelt-to-BarrenShores.png)
+
+![Gate to Atreus' Clouds](docs/images/X4-AsteroidBelt-to-AtreusClouds.png)
