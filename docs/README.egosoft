@@ -1,0 +1,260 @@
+[size=150][b]X4 Chem Gate Builder[/b][/size]
+
+There is a tool to build gate connections for the game X4 Foundations. This tool has been created to help players to build connection between any sectors in the game. This tool creates a mod (extension) for the game, which can be installed and uninstalled easily.
+
+[size=120][b]Features[/b][/size]
+
+Console and graphical user interface (GUI) versions are available. The GUI version is more user-friendly and has more features.
+[*] Build gate connections between any sectors in the game.
+[*] You can build any number of connections.
+[*] Connection - it is a pair of the gates in two sectors.
+[*] You can easily arrange the location of the gates in the sectors.
+[*] In GUI version, after gate is initially defined, you can easily move it to another location.
+
+
+[size=120][b]Requirements[/b][/size]
+
+    You have to have the extracted game files in your computer by the [url=https://wiki.egosoft.com:1337/X4%20Foundations%20Wiki/Modding%20Support/X%20Catalog%20Tool/]X Catalog Tool[/url]
+
+[size=120][b]Installation[/b][/size]
+
+Simple download the latest version of the tool from the [url=https://www.nexusmods.com/x4foundations/mods/1587/]Nexus[/url] and extract it to any folder.
+
+You can start to build your connections right away.
+
+[size=120][b]Usage[/b][/size]
+
+[size=100][b]Console version[/b][/size]
+
+Console version is a simple command line tool. You can run it from the command line and follow the instructions.
+
+It has two command line arguments:
+[list]
+[*] [b]--extracted-path[/b] - path to the extracted game files.
+[*] [b]--log-level[/b] - log level. Possible values: [b]DEBUG[/b], [b]INFO[/b], [b]WARNING[/b], [b]ERROR[/b], [b]CRITICAL[/b]. Default value is [b]WARNING[/b].
+[/list]
+
+Example:
+[code=bash]
+x4_chem_gate_builder_cli.exe --extracted-path "C:\X4\extracted" --log-level DEBUG
+[/code]
+
+The interface is simple. From the beginning it will propose to you to select first sector ia a first connection:
+[code=bash]
+? Select a sector: (Use arrow keys)
+ » Antigone Memorial (Cluster_28_Sector001_macro) - Source: Vanilla
+   Argon Prime (Cluster_14_Sector001_macro) - Source: Vanilla
+   Asteroid Belt (Cluster_100_Sector001_macro) - Source: Extension: ego_dlc_terran
+   Atiya's Misfortune I (Cluster_26_Sector001_macro) - Source: Vanilla
+   Atiya's Misfortune III (Cluster_26_Sector002_macro) - Source: Vanilla
+   Atreus' Clouds (Cluster_608_Sector001_macro) - Source: Extension: ego_dlc_boron
+   Avarice I (Cluster_500_Sector001_macro) - Source: Extension: ego_dlc_pirates
+[/code]
+
+After you select the first sector, it will propose to select the gate position in the sector:
+[code=bash]
+? Select a sector: Argon Prime (Cluster_14_Sector001_macro) - Source: Vanilla
+Existing Connections Zones in Cluster_14_Sector001_macro:
+[*] connection_ClusterGate014To013                     : X:   50.00 km, Y:    0.50 km, Z: -110.00 km, to Second Contact II Flashpoint
+[*] connection_ClusterGate014To007                     : X:  -90.63 km, Y:    0.00 km, Z:   95.91 km, to The Reach
+[*] connection_ClusterGate014To706                     : X:  -94.98 km, Y:    0.00 km, Z:   21.30 km, to Hatikvah's Faith
+[*] connection_ClusterGate014To029                     : X:   50.00 km, Y:    0.50 km, Z:  120.00 km, to Hatikvah's Choice I
+Define coordinates for the gate in Argon Prime:
+? Enter coordinates in km (X, Y, Z):
+[/code]
+Additionally provide information about the existing gates in the sector.
+
+After you select entered coordinates, it will propose to define the rotation of the gate:
+[code=bash]
+? Enter coordinates in km (X, Y, Z): 50,50,50
+Define rotation for the gate in Argon Prime:
+? Enter rotation angles (roll, pitch, yaw in degrees):
+[/code]
+
+After the the same steps will be repeated for the second sector.
+
+When both sectors are selected and a gate is defined in each sector, the tool will ask to enter more connections.
+[code=bash]
+? Select a sector: Asteroid Belt (Cluster_100_Sector001_macro) - Source: Extension: ego_dlc_terran
+Existing Connections Zones in Cluster_100_Sector001_macro:
+[*] connection_ClusterGate100To101                     : X:  -11.52 km, Y:    0.00 km, Z:  136.36 km, to Mars
+[*] connection_ClusterGate100To048                     : X:  114.36 km, Y:    0.00 km, Z:  -61.52 km, to Getsu Fune
+[*] connection_ClusterGate100To107                     : X:   41.41 km, Y:    0.00 km, Z: -130.61 km, to Jupiter
+Define coordinates for the gate in Asteroid Belt:
+? Enter coordinates in km (X, Y, Z): 50,50,50
+Define rotation for the gate in Asteroid Belt:
+? Enter rotation angles (roll, pitch, yaw in degrees): 0,0,0
+? Will you add one more Gate connection? (y/N)
+[/code]
+
+Then you will be asked to generate the mod (extension) for the game:
+[code=bash]
+? Will you add one more Gate connection? No
+? Should be extension files be generated? (Y/n)
+[/code]
+
+If you select [b]Y[/b], the tool will generate the extension files in the [b]output[/b] folder.
+
+If it not empty, the tool will ask you to overwrite the existing files:
+[code=bash]
+? Will you add one more Gate connection? No
+? Output directory is not empty. Do you want to clean it? (y/N)
+[/code]
+
+and then will generate the extension files.
+
+[code=bash]
+? Output directory is not empty. Do you want to clean it? Yes
+Script execution completed.
+[/code]
+
+As a result, the extension files will be generated in the [b]output[/b] folder. It will be a folder with name [b]chem_gate_keeper[/b].
+
+Simply copy this folder to the [b]extensions[/b] folder of the game and enable it in the game settings.
+
+[size=100][b]GUI version[/b][/size]
+
+GUI version is more user-friendly and has more features.
+
+[size=100][b]First start[/b][/size]
+On first start, the tool will ask you to select the extracted game files folder.
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_select_extracted_folder.png[/img][/spoiler]
+
+[size=100][b]Main window[/b][/size]
+
+After you start the GUI version, you will see the main window with the list of the connections and empty sectors selection
+and gate data fields.
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_main_window.png[/img][/spoiler]
+
+[size=100][b]First sector selection and map[/b][/size]
+
+To start, simple select any sector from the list in the [b]Direct Sector[/b] group.
+Then the current gate location will be displayed on the raw and simple sector map and as a list on the right side.
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_first_sector_selected.png[/img][/spoiler]
+
+Existing gates displayed as a blue dots with appropriate border color. Red one - are non-active ones, i.e. not connected to any other gate. Green one - are active, i.e. connected to another gate.
+
+[size=100][b]Define gate location[/b][/size]
+
+Then you can define the gate location by entering the coordinates and rotation angles.
+Please take in account that the coordinates are split into two parts:
+[list]
+[*] coordinates itself, in km.
+[*] position - the position of from the coordinates point in meters.
+[/list]
+
+Position is used to define the exact location of the gate in the sector. and it's randomly prefilled on the gate selection.
+
+[size=100][b]New gate on map[/b][/size]
+
+After you will define coordinates, the new gate will be displayed on the map as a light yellow dot.
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_define_gate.png[/img][/spoiler]
+
+[size=100][b]Move gate[/b][/size]
+
+Now you can select by mouse the move across sector map. Coordinates will be updated in the gate data fields.
+
+How it looks you can see on appropriate animated gif.
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_move_gate.gif[/img][/spoiler]
+
+[size=100][b]Other gate data[/b][/size]
+
+Then you can define a rotation angles for the gate.
+
+And set the status of the gate - for some reason you can deactivate it (if you plan to use it in your own scenarios).
+
+
+[size=100][b]Second sector selection[/b][/size]
+
+Now you can select the second sector and define the gate location in it.
+
+Please take in account that the in selection list for the second ([b]Opposite Sector[/b]) some sectors will be grayed out and not available for the selection. It's because the sector is already selected as a first sector or they already have a connection with the [b]Direct Sector[/b].
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_select_opposite_sector.gif[/img][/spoiler]
+
+After you will define the gate in the second sector, you can add the connection to the list.
+
+[size=100][b]Add connection[/b][/size]
+
+Simple press the [b]Add Gate[/b] button.
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_add_gate.png[/img][/spoiler]
+
+The connection will be added to the list. You can see the connection in the list and still can edit it.
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_connection_added.png[/img][/spoiler]
+
+[size=100][b]Modify existing connection[/b][/size]
+
+If you will move the gate in the sector for the existing connection - you will see two "identical" gates on the map.
+One ([b]green[/b]) - is the gate from the connection, another ([b]light yellow[/b]) - is the gate in the new location.
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_gate_from_connection_moved.png[/img][/spoiler]
+
+Additionally, as you can see, each gate have a tooltip on the map with the sector name, to which it connects current sector, source (from [b]map[/b] or from [b]mod[/b]) and the X,Z coordinates.
+
+[size=100][b]Main window buttons[/b][/size]
+
+As you can see, there are two buttons on the bottom of the window:
+[list]
+[*] [b]Add/Update Gate[/b] - to add the gate connection to the list. We already discussed it.
+[*] [b]Reset[/b] - to reset the gate data fields to the default values. See below for more information.
+[/list]
+
+[size=100][b]Reset button[/b][/size]
+
+If you have no selected gate connection in the list - reset button will reset all gate connection related information to the defaults, mostly empty values.
+
+Otherwise, it will reset the gate data fields to the values of the selected connection.
+
+So, now you can add more connections to the list.
+
+[size=100][b]Save the mod[/b][/size]
+
+When you will finish with the connections, you can save te mod via [b]File[/b] -> [b]Save Mod[/b] menu item.
+
+Please take in account - you you not finished yet editing the connections, this menu item will be disabled.
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_save_mod_disabled.png[/img][/spoiler]
+
+Save current connection or reset it to have the ability to save the mod.
+
+After you will go to the [b]Save Mod[/b] menu item, the tool will ask you to select the output folder for the mod.
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_select_output_folder.png[/img][/spoiler]
+
+After that the mod is ready to be installed in the game.
+
+[size=100][b]Load the mod[/b][/size]
+
+If you have a previously saved mod, you can load it via [b]File[/b] -> [b]Load Mod[/b] menu item.
+Difference from the saving mod - you hve to select not a mod folder, but the [b]content.xml[/b] file in the mod root folder.
+It was made to avoid missing the right folder.
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_load_mod.png[/img][/spoiler]
+
+After loading the mod, you will see the connections in the list and the gates on the map. But no current connection will be selected.
+
+[size=100][b]Overview mod in a tool and in the game[/b][/size]
+
+There a gif to display the mod gates ti compare it with a screenshots from the game.
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/gui_mod_gates_overview.gif[/img][/spoiler]
+
+And there a several screenshots from the game with the mod gates in the [b]Asteroid Belt[/b] sector.
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/X4-AsteroidBelt-new-thee-gates.png[/img][/spoiler]
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/X4-AsteroidBelt-to-ArgonPrime.png[/img][/spoiler]
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/X4-AsteroidBelt-to-BarrenShores.png[/img][/spoiler]
+
+[spoiler][img]https://github.com/chemodun/x4_chem_gate_builder_info/raw/main/docs/images/X4-AsteroidBelt-to-AtreusClouds.png[/img][/spoiler]
+
+[size=120][b]Additional links[/b][/size]
+
+There is a topic on the [url=https://forum.egosoft.com/viewtopic.php?p=5262362]Egosoft forum[/url] about the tool.

@@ -19,7 +19,7 @@ Console and graphical user interface (GUI) versions are available. The GUI versi
 
 ## Installation
 
-Simple download the latest version of the tool from the [releases page]() and extract it to any folder.
+Simple download the latest version of the tool from the [Nexus](https://www.nexusmods.com/x4foundations/mods/1587/) and extract it to any folder.
 
 You can start to build your connections right away.
 
@@ -255,3 +255,7 @@ And there a several screenshots from the game with the mod gates in the `Asteroi
 ![Gate to Barren Shores](docs/images/X4-AsteroidBelt-to-BarrenShores.png)
 
 ![Gate to Atreus' Clouds](docs/images/X4-AsteroidBelt-to-AtreusClouds.png)
+
+## Additional links
+
+There is a topic on the [Egosoft forum](https://forum.egosoft.com/viewtopic.php?p=5262362) about the tool.
