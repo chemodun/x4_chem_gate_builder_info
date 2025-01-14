@@ -12,6 +12,10 @@ Console and graphical user interface (GUI) versions are available. The GUI versi
 - You can easily arrange the location of the gates in the sectors.
 - In GUI version, after gate is initially defined, you can easily move it to another location.
 
+## Disclaimer
+
+Anybody can use built gate connections in his own mods.
+With appropriate credits to the tool and the author.
 
 ## Requirements
 
